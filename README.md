@@ -49,7 +49,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # image: 
+    # image:
     restart: always
     # command: ...
     # ports:
