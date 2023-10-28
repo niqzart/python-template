@@ -45,6 +45,9 @@ no_lines_before = "LOCALFOLDER"
 reverse_relative = true
 line_length = 88
 
+[tool.mypy]
+strict = true
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
