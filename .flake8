@@ -20,21 +20,22 @@ extend-ignore =
   D I FI TC Q U101 S101 WPS400
 
   # black
-  WPS348
+  WPS348 WPS352 C812 C815
   # weird
-  PIE803 C101 FNE008 ANN101 ANN102
+  PIE803 C101 FNE008 N812 ANN101 ANN102 WPS110 WPS111 VNE001 CM001
   # broken
-  PIE798 WPS226 WPS354 RST304
-  WPS322 WPS428 WPS462  # fails for class-attribute docstrings
-  U100  # fails to understand `raise NotImplementedError`
+  PIE798 WPS226 WPS354 WPS432 WPS473 WPS507
+  U100  # fails to understand `raise NotImplementedError` and overloading
+  WPS428  # fails to understand overloading
+  WPS601  # fails to same-name class and instance attributes (pydantic & sqlalchemy)
 
   # don't block features
-  WPS305  # f-strings are the best
+  WPS237 WPS305  # f-strings are the best
   WPS306  # python 2.x is deprecated
-  WPS420  # pass is a thing
+  WPS420 WPS604  # pass is a thing
   WPS430  # nested functions
+  WPS451  # positional-only arguments
   WPS501  # try-finally with no except
   WPS600  # subclassing lowercase builtins
   WPS602  # @staticmethod
-  WPS604  # some cringe /w banning constructions, including `pass`
   WPS605  # methods with no arguments
