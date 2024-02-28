@@ -21,14 +21,14 @@ pre-commit install
 ### Docker
 Here is a template dockerfile for python /w poetry:
 ```dockerfile
-FROM python:3.11-alpine
+FROM python:3.12-alpine
 
 # change to any directory
 WORKDIR /app
 RUN pip install --upgrade pip
 
 # set to your poetry version
-RUN pip install poetry==1.4.1
+RUN pip install poetry==1.8.0
 RUN poetry config virtualenvs.create false
 
 COPY pyproject.toml poetry.lock ./
