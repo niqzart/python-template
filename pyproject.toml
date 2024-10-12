@@ -1,9 +1,10 @@
 [tool.poetry]
-name = "python-template"  # change this
+name = "python-template"  # TODO change this
 version = "0.1.0"
-description = "Python project template by niqzart"  # change this
-authors = ["niqzart <niqzart@gmail.com>"]  # change this
+description = "Python project template by niqzart"  # TODO change this
+authors = ["niqzart <niqzart@gmail.com>"]  # TODO change this
 readme = "README.md"
+# package-mode = false  # TODO add this if you are not writing a library
 
 [tool.poetry.dependencies]
 python = "^3.12"

@@ -8,10 +8,11 @@ A template repository for python projects with:
 - Pytest
 
 ### How to use
-Click "use this template" on the top right of the main repository page and create a new repository from this one. After that you can work on your new repository as usual. I'd recommend searching all `change this` comments in `pyproject.toml` and changing those lines to whatever you seem fit
+Click "use this template" on the top right of the main repository page and create a new repository from this one. After that you can work on your new repository as usual. I'd recommend searching all `TODO` comments in the resulting repository and completing them
 
 ### Install
 ```
+# TODO set to your poetry version
 pip install poetry
 poetry install
 pre-commit install
@@ -23,20 +24,20 @@ Here is a template dockerfile for python /w poetry:
 ```dockerfile
 FROM python:3.12-alpine
 
-# change to any directory
+# TODO change to any directory
 WORKDIR /app
 RUN pip install --upgrade pip
 
-# set to your poetry version
+# TODO set to your poetry version
 RUN pip install poetry==1.8.0
 RUN poetry config virtualenvs.create false
 
 COPY pyproject.toml poetry.lock ./
 RUN poetry install --no-interaction --no-ansi --only main
 
-# COPY your project files
+# TODO `COPY` your project files
 
-# set the ENTRYPOINT and/or CMD
+# TODO set the ENTRYPOINT and/or CMD
 ```
 
 ### Docker Compose
