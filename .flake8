@@ -18,11 +18,16 @@ max-line-length = 88
 extend-ignore =
   # # not required or shadowed by other plugins
   D I FI TC Q U101 S101 WPS400
+  # black
+  WPS220 WPS348 WPS352 E501 C812 C815 C816 E203
+  # mypy (for __init__)
+  WPS410 WPS412
 
-  # # black
-  WPS348 WPS352 C812 C815
   # # weird
-  PIE803 C101 FNE008 N812 ANN101 ANN102 WPS110 WPS111 VNE001 CM001
+  PIE803 C101 FNE007 FNE008 N812 ANN101 ANN102 WPS110 WPS111 WPS338 WPS407 WPS414 VNE001 CM001
+  # too many
+  WPS201 WPS202 WPS204 WPS210 WPS211 WPS214 WPS217 WPS218 WPS221 WPS230 WPS231 WPS234 WPS235 WPS238
+
   # # broken
   PIE798 WPS226 WPS354 WPS432 WPS473 WPS507
   # fails to understand `raise NotImplementedError` and overloading
@@ -31,10 +36,10 @@ extend-ignore =
   WPS115
   # fails to understand overloading
   WPS428
-  # fails to same-name class and instance attributes (pydantic & sqlalchemy)
+  # fails to understand pipe-unions
+  WPS465
+  # fails with same-name class and instance attributes (pydantic & sqlalchemy)
   WPS601
-  # too many
-  WPS201 WPS204 WPS210 WPS214 WPS217 WPS218 WPS221 WPS232
 
   # # don't block features
   # utils is a module name
@@ -53,13 +58,10 @@ extend-ignore =
   WPS451
   # try-finally with no except
   WPS501
-  # subclassing lowercase builtins
-  WPS600
   # @staticmethod
   WPS602
   # methods with no arguments
   WPS605
 
 per-file-ignores =
-  test_*:       TN101 FNE005 SCS108 VNE001 WPS202 WPS211 WPS317 WPS407 WPS425 WPS432 WPS440 WPS437 WPS441 WPS442 WPS507 WPS520 WPS609
-  *conftest.py: TN101 FNE005 SCS108 VNE001 WPS202 WPS211 WPS317 WPS407 WPS425 WPS432 WPS440 WPS437 WPS441 WPS442 WPS507 WPS520 WPS609
+  *test*: TN101 FNE005 SCS108 S311 VNE001 WPS118 WPS317 WPS407 WPS425 WPS432 WPS437 WPS440 WPS441 WPS442 WPS507 WPS520 WPS609
