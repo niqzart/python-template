@@ -13,7 +13,7 @@ Click "use this template" on the top right of the main repository page and creat
 ### Install
 ```
 # TODO set to your poetry version
-pip install poetry
+pip install poetry==1.8.2
 poetry install
 pre-commit install
 ```
@@ -29,7 +29,7 @@ WORKDIR /app
 RUN pip install --upgrade pip
 
 # TODO set to your poetry version
-RUN pip install poetry==1.8.0
+RUN pip install poetry==1.8.2
 RUN poetry config virtualenvs.create false
 
 COPY pyproject.toml poetry.lock ./
