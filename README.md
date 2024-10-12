@@ -46,7 +46,8 @@ And a template docker-compose file:
 services:
   app:
     # depends_on:
-    #   - database
+    #   database: 
+    #     condition: service_healthy
     build:
       context: .
       dockerfile: Dockerfile
@@ -54,9 +55,13 @@ services:
     restart: always
     # command: ...
     # ports:
-    #   - "8000:8000"
+    #   - target: 8000
+    #     host_ip: 127.0.0.1
+    #     published: 8000
     # volumes:
-    #   - ./<SOURCE>:/<WORKDIR>  # pass your files for quik-reload
+    #   - type: bind  # TODO you can pass source files for fast-reload
+    #     source: <SOURCE>
+    #     target: /<WORKDIR>
     # environment:
     #   SECRET: local
 ```
