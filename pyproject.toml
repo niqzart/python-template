@@ -49,6 +49,8 @@ line_length = 88
 
 [tool.mypy]
 strict = true
+warn_unreachable = true
+warn_redundant_casts = true
 
 [build-system]
 requires = ["poetry-core"]
