@@ -13,7 +13,7 @@ Click "use this template" on the top right of the main repository page and creat
 ### Install
 ```
 # TODO set to your poetry version
-pip install poetry==1.8.2
+pip install poetry==2.1.3
 poetry install
 pre-commit install
 ```
@@ -22,14 +22,14 @@ pre-commit install
 ### Docker
 Here is a template dockerfile for python /w poetry:
 ```dockerfile
-FROM python:3.12-alpine
+FROM python:3.13-alpine
 
 # TODO change to any directory
 WORKDIR /app
 RUN pip install --upgrade pip
 
 # TODO set to your poetry version
-RUN pip install poetry==1.8.2
+RUN pip install poetry==2.1.3
 RUN poetry config virtualenvs.create false
 
 COPY pyproject.toml poetry.lock ./
@@ -59,7 +59,7 @@ services:
     #     host_ip: 127.0.0.1
     #     published: 8000
     # volumes:
-    #   - type: bind  # TODO you can pass source files for fast-reload
+    #   - type: bind  # TODO you can pass source files for hot-reloading
     #     source: <SOURCE>
     #     target: /<WORKDIR>
     # environment:
